@@ -1,11 +1,11 @@
 html * {
-    /*use Helvetica, because that is the best font. 
+    /*use Helvetica, because that is the best font.
      * The best. */
     font-family: Helvetica;
 }
 
 body {
-  background: #FEFEFE;    
+  background: #FEFEFE;
   margin: 0;
 }
 
@@ -79,7 +79,7 @@ body {
 }
 
 .blog_post {
-  background-color: #EEE; 
+  background-color: #EEE;
   border-top: 1px solid blue;
   padding: 30px;
   width: 50%;
@@ -127,7 +127,7 @@ p {
 }
 
 .profile_img_container {
-  float: right;  
+  float: right;
   margin-right: 75px;
   margin-bottom: 20px;
   width: 25%;
@@ -314,7 +314,7 @@ p.profile_sidebar_data_header {
 
 p.profile_sidebar_data {
   margin-left: 20px;
-  font-size: 19px; 
+  font-size: 19px;
 }
 
 h2.profile_summary {
@@ -391,7 +391,7 @@ h1.unauthorized {
 }
 
 .comment_section {
-  background-color: #EEE; 
+  background-color: #EEE;
   padding: 10px 30px;
   width: 50%;
   float: left;
@@ -401,8 +401,8 @@ h1.unauthorized {
 }
 
 .comment_section textarea {
-  min-width: 630px;
-  max-width: 630px;
+  min-width: 98.5%;
+  max-width: 98.5%;
   min-height: 45px;
   padding: 5px;
   margin-bottom: 20px;
@@ -415,7 +415,7 @@ h1.unauthorized {
 }
 
 .user_comments {
-  background-color: #EEE; 
+  background-color: #EEE;
   padding: 10px 30px;
   width: 50%;
   float: left;
@@ -448,7 +448,7 @@ hr {
 }
 
 .userpage_cmmnt {
-  background-color: #EEE; 
+  background-color: #EEE;
   padding: 30px;
   width: 75%;
   float: left;

@@ -4,6 +4,8 @@
   <head>
     <link rel="shortcut icon" type="image/png" href="resources/favicon.png"/>
     <link rel="stylesheet" href="resources/style.css" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/post_page.js"></script>
     <title>Life of Tony</title>
   </head>
   <body>
