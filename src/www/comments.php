@@ -1,7 +1,7 @@
 <div class="comment_section">
   <h3>Leave a comment...</h3>
   <form id="comment_form" method="post" action="comment_handler.php">
-    <textarea name="comment_text" class="comment_textarea"></textarea>
+    <textarea name="comment_text" id="comment" class="comment_textarea"></textarea>
     <div class="submit_comment_button_container">
       <input type="submit" value="Post Comment">
     </div>
