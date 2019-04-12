@@ -25,7 +25,6 @@ $(function() {
         } else {
           htmlToPrepend += "<p>" + comment + "</p>";
         }
-
         htmlToPrepend += "</div>";
         $(".user_comments").prepend(htmlToPrepend);
         $(".no_content").hide();
