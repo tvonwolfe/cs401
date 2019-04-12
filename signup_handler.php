@@ -28,6 +28,7 @@
       $_SESSION['message'] = "Account creation successful!";
       header("Location: login.php");
     case Dao::BAD_EMAIL:
+      $_SESSION['bad_email'] = "Invalid email address.";
       header("Location: signup.php");
       exit();
     case Dao::BAD_USER:
