@@ -12,7 +12,7 @@
     $_SESSION['bad_pass'] = "Invalid password. (Must be at least 8 characters and only use alphanumeric/special characters.)";
   }
 
-  if(strlen($user) > 20) {
+  if(strlen($user) == 0 || strlen($user) > 20) {
     $_SESSION['bad_user'] = "Invalid username. (Must be 20 characters or less and contain only alphanumeric/special characters.)";
   }
 
