@@ -1,30 +1,35 @@
-$(function () {
-    $(".user_comments").submit(function() {
-        var values = $("form").serialize();
-        var comment = $("#comment").val();
-        $.ajax({
-            type: "POST",
-            url: "comment_handler.php",
-            data: values,
-            success: function() {
-                var timestamp = new Date();
-                var month = timestamp.getMonth() + 1;
-                var day = timestamp.getDay();
-                var year = timestamp.getFullYear();
-                var hours = timestamp.getHours();
-                var min = timestamp.getMinutes();
-                var timestamp_str = "/ " + month + "/" + day + "/" + year + " " + hours + ":" + min + " /";
-                var htmlToPrepend = "<hr>" + '<p class="timestamp">' + timestamp_str + "</p>"
-                + '<div class="usr_cmmnt"> + <a href="user.php?user="' + $("a.login").text() + '" class="usrnm"' + $("a.login").text() + "</a>";
+$(function() {
+  $("#comment_form").submit(function(event) {
+    event.preventDefault();
+    var values = $("#comment_form").serialize();
+    var comment = $("#comment").val();
+    $.ajax({
+      type: "POST",
+      url: "comment_handler.php",
+      data: values,
+      success: function() {
+        var htmlToPrepend =
+          "<hr>" +
+          '<p class="timestamp">/ Just now /</p>' +
+          '<div class="usr_cmmnt"> <a href="user.php?user="' +
+          $(".login").text() +
+          '" class="usrnm">' +
+          $(".login").text() +
+          "</a>";
+        $("textarea").val("");
+        if (comment.includes("\n")) {
+          var paragraphs = comment.split("\n");
+          for (var p in paragraphs) {
+            htmlToPrepend += "<p>" + p + "</p>";
+          }
+        } else {
+          htmlToPrepend += "<p>" + comment + "</p>";
+        }
 
-                var paragraphs = comment.split("\n");
-                for(var p in paragraphs) {
-
-                }
-                $("user_comments").prepend();
-
-
-            }
-        });
+        htmlToPrepend += "</div>";
+        $(".user_comments").prepend(htmlToPrepend);
+        $(".no_content").hide();
+      }
     });
-}
+  });
+});

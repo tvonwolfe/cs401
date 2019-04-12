@@ -1,13 +1,14 @@
 <?php session_start(); ?>
-<!DOCTYPE html>    
+<!DOCTYPE html>
 <html>
   <head>
     <title>Life of Tony</title>
     <link rel="shortcut icon" type="image/png" href="resources/favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="resources/style.css">
   </head>
   <body>
-  <?php 
+  <?php
     $currentNav="home";
     include('header.php');
     include('navbar.php');
@@ -25,7 +26,7 @@
 
   <?php
     include('recent_posts.php');
-    include('footer.php'); 
+    include('footer.php');
   ?>
   </body>
-</html>    
+</html>

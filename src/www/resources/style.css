@@ -1,9 +1,6 @@
 html * {
-    /*use Helvetica, because that is the best font.
-     * The best. */
-    font-family: Helvetica;
+  font-family: 'Roboto', sans-serif;
 }
-
 body {
   background: #FEFEFE;
   margin: 0;
@@ -271,7 +268,7 @@ p > a {
 
 #signup {
   margin-top: 50px;
-  height: 450px;
+  height: 480px;
 }
 
 #signup_button {
@@ -326,6 +323,12 @@ h1.no_content {
   color: #DDDDDD;
   text-align: center;
   margin: 140px 10px;
+}
+
+h2.no_content {
+  color: #888;
+  text-align: center;
+  margin: 40px 15px;
 }
 
 h1.unauthorized {
@@ -464,4 +467,12 @@ hr {
   font-weight: bold;
   line-height: 2.0;
   color: #00186b;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid black;
 }

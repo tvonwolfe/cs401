@@ -3,6 +3,7 @@
 <html>
   <head>
     <link rel="shortcut icon" type="image/png" href="resources/favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="resources/style.css"/>
     <title>Programming of Tony</title>
   </head>
@@ -45,4 +46,3 @@
   ?>
   </body>
 </html>
-

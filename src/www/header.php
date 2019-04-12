@@ -6,6 +6,6 @@
 </div>
 
 
-<?php 
-  require_once('db/Dao.php'); 
+<?php
+  require_once('db/Dao.php');
 ?>

@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="resources/style.css">
     <link rel="shortcut icon" type="image/png" href="resources/favicon.png"/>
     <title>Life of Tony</title>
@@ -48,8 +49,8 @@
       where we both learned that affording your own living situation meant you had to work hard
       if you weren't yet qualified for skilled labor. </p>
 
-      <p>Now, 4 years later, I am a happily employed software engineer. I greatly enjoy programming of nearly any kind, 
-      and I love growing or expanding my skillset in any way I can. I'm into cars, and more specifically euro imports, but I love many JDM cars too. 
+      <p>Now, 4 years later, I am a happily employed software engineer. I greatly enjoy programming of nearly any kind,
+      and I love growing or expanding my skillset in any way I can. I'm into cars, and more specifically euro imports, but I love many JDM cars too.
       I also love spending time with my wife, and trying new things together. I'm a soon-to-be graduate
       from the computer science program at Boise State University, a homeowner, and parent to a very
       cute and fluffy wiener dog named Piper.</p>
@@ -73,8 +74,6 @@
     |   /'+++++++++
     | /'   ++++++
      '       ++
-
-
 -->
   </body>
 </html>

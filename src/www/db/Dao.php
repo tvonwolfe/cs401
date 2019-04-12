@@ -13,8 +13,8 @@ class Dao {
   public const BAD_PASS = 3;
   public const USER_EXISTS = 4;
 
-
-  private $hash_alg = "sha256";
+  private const SALT = "ja;'sjasfpqwf[&65&%$#lakh^9]";
+  private const HASH = "sha256";
 
   public function getConnection() {
     try {
@@ -57,7 +57,7 @@ class Dao {
     }
     else {
       //made it through all checks!
-      $pass_hash = hash($this->hash_alg, $pass);
+      $pass_hash = hash(self::HASH, $pass . self::SALT);
       $insert_str = " INSERT INTO blog_user (username, email, password_hash, date_account_created)
         VALUES (:username, :email_addr, :passwd_hash, CURDATE());";
 
@@ -170,7 +170,7 @@ class Dao {
     $result = $stmt->fetch(); // there SHOULD only be one user with this username.
 
     if($result) {
-      if($result['password_hash'] === hash($this->hash_alg, $password)) {
+      if($result['password_hash'] === hash(self::HASH, $password . self::SALT)) {
         return true;
       }
       else {
@@ -183,7 +183,7 @@ class Dao {
   }
 
   public function getUserActivitySummary($username, $conn) {
-    $q_str = "SELECT COUNT(comment_id) 
+    $q_str = "SELECT COUNT(comment_id)
               FROM post_comment
               JOIN blog_user ON post_comment.user_id = blog_user.user_id
               WHERE blog_user.username = :user;";
@@ -200,7 +200,7 @@ class Dao {
 
   public function getAccountCreateDate($username, $conn) {
     $q_str = "SELECT date_account_created
-              FROM blog_user 
+              FROM blog_user
               WHERE username = :user;";
 
     $stmt = $conn->prepare($q_str);
@@ -226,7 +226,7 @@ class Dao {
     $stmt->bindParam(':id', $blog_post_id);
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    
+
     return $stmt->fetchAll();
   }
 

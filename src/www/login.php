@@ -3,6 +3,7 @@
 <html>
   <head>
     <link rel="shortcut icon" type="image/png" href="resources/favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="resources/style.css"/>
     <title>Life of Tony</title>
   </head>
@@ -30,12 +31,12 @@
       <h1>Log In</h1>
       <form method="post" action="login_handler.php">
         <div class="textbox_container">
-          <h3>Username:</h3>
-          <input class="textbox" type="text" name="username" value="<?php if (isset($_SESSION['username'])) echo $_SESSION['username']; unset($_SESSION['username']); ?>" autofocus>
+          <label for="username"><h3>Username:</h3></label>
+          <input class="textbox" type="text" id="username" name="username" value="<?php if (isset($_SESSION['username'])) echo $_SESSION['username']; unset($_SESSION['username']); ?>" autofocus>
         </div>
         <div class="textbox_container">
-          <h3>Password:</h3>
-          <input class="textbox" type="password" name="password">
+          <label for="password"><h3>Password:</h3></label>
+          <input class="textbox" type="password" id="password" name="password">
         </div>
         <div class="login_button">
           <input type="submit" value="Sign In">

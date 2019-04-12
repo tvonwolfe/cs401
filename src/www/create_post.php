@@ -5,6 +5,7 @@
   <head>
     <title>Create Blog Post</title>
     <link rel="shortcut icon" type="image/png" href="resources/favicon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="resources/style.css">
   </head>
   <body>
