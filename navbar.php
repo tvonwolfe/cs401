@@ -24,7 +24,7 @@
   }
   print 'login" href=';
   if(isset($_SESSION['logged_in'])) {
-    print '"user.php?user='. $_SESSION['username'] . '">' . $_SESSION['username'] . '</a>';
+    print '"user.php?user='. $_SESSION['username'] . '">' . htmlentities($_SESSION['username']) . '</a>';
   }
   else {
     print '"login.php">Login/Signup</a>';

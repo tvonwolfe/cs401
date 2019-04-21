@@ -7,11 +7,11 @@ class Dao {
   private $user = "b9b4a6a6dd5063";
   private $pass = "3a66046e";
 
-  public const GOOD_USER_DATA = 0;
-  public const BAD_EMAIL = 1;
-  public const BAD_USER = 2;
-  public const BAD_PASS = 3;
-  public const USER_EXISTS = 4;
+  public const GOOD_USER_DATA = 0x0;
+  public const BAD_EMAIL = 0x1;
+  public const BAD_USER = 0x2;
+  public const BAD_PASS = 0x4;
+  public const USER_EXISTS = 0x8;
 
   private const SALT = "ja;'sjasfpqwf[&65&%$#lakh^9]";
   private const HASH = "sha256";
@@ -27,7 +27,8 @@ class Dao {
     return $conn;
   }
 
-  public function checkIfUserExists($username, $conn) {
+  public function checkIfUserExists($username) {
+    $conn = $this->getConnection();
     $q_str = "SELECT EXISTS(SELECT * FROM blog_user WHERE username = :username);";
     $stmt = $conn->prepare($q_str);
     $stmt->bindParam(':username', $username);
@@ -41,21 +42,30 @@ class Dao {
     return ((int)array_pop($s) == 1);
   }
 
+  private function performUserDataChecks($email, $user, $pass) {
+    $ret = 0;
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $ret |= self::BAD_EMAIL;
+    }
+    if(strlen($user) > 20 || strlen($user) == 0) {
+      $ret |= self::BAD_USER;
+    }
+    if($this->checkIfUserExists($user)) {
+      $ret |= self::USER_EXISTS;
+    }
+    if(strlen($pass) < 8) {
+      $ret |= self::BAD_PASS;
+    }
+
+    return $ret;
+  }
+
   public function createNewAccount($email, $user, $pass) {
     $conn = $this->getConnection();
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      return self::BAD_EMAIL;
-    }
-    else if(strlen($user) > 20) {
-      return self::BAD_USER;
-    }
-    else if($this->checkIfUserExists($user, $conn)) {
-      return self::USER_EXISTS;
-    }
-    else if(strlen($pass) < 8) {
-      return self::BAD_PASS;
-    }
-    else {
+
+    $errcode = $this->performUserDataChecks($email, $user, $pass);
+
+    if(!$errcode) {
       //made it through all checks!
       $pass_hash = hash(self::HASH, $pass . self::SALT);
       $insert_str = " INSERT INTO blog_user (username, email, password_hash, date_account_created)
@@ -67,9 +77,9 @@ class Dao {
       $stmt->bindParam(':passwd_hash', $pass_hash);
 
       $stmt->execute();
-
-      return self::GOOD_USER_DATA;
     }
+
+    return $errcode;
   }
 
   /* function to query the db for blog posts within the current category, sorted

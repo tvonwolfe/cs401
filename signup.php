@@ -17,6 +17,10 @@
   ?>
 
   <?php
+
+    if(isset($_SESSION['code']))print($_SESSION['code']);
+    unset($_SESSION['code']);
+
     if(isset($_SESSION['bad_email']) && !isset($_SESSION['account_created'])) {
       print "<div class=\"bad_message\">" . $_SESSION['bad_email'] . "</div>";
     }

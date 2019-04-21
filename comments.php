@@ -3,7 +3,7 @@
   <form id="comment_form" method="post" action="comment_handler.php">
     <textarea name="comment_text" id="comment" class="comment_textarea"></textarea>
     <div class="submit_comment_button_container">
-      <input type="submit" value="Post Comment">
+      <input id="submit_button" type="submit" value="Post Comment">
     </div>
   </form>
 </div>
@@ -27,7 +27,7 @@
           print '<a href="user.php?user=' . $comment['username'] . '" class="usrnm">' . $comment['username'] . '</a>';
           $paragraphs = explode("\n", $comment['comment_text']);
           foreach($paragraphs as $p) {
-            print '<p>' . htmlspecialchars($p) . '</p>';
+            print '<p>' . htmlentities($p) . '</p>';
           }
 
           print '</div>';

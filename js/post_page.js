@@ -1,6 +1,7 @@
 $(function() {
   $("#comment_form").submit(function(event) {
     event.preventDefault();
+    $("#submit_button").val("Posting...");
     var values = $("#comment_form").serialize();
     var comment = $("#comment").val();
     $.ajax({
@@ -8,6 +9,7 @@ $(function() {
       url: "comment_handler.php",
       data: values,
       success: function() {
+        $("#submit_button").val("Post Comment");
         var htmlToPrepend =
           "<hr>" +
           '<p class="timestamp">/ Just now /</p>' +
@@ -28,6 +30,9 @@ $(function() {
         htmlToPrepend += "</div>";
         $(".user_comments").prepend(htmlToPrepend);
         $(".no_content").hide();
+      },
+      failure: function() {
+        $("#submit_button").val("Post Comment");
       }
     });
   });

@@ -29,7 +29,7 @@
   if($user_exists) {
     $num_comments = (int)$dao->getUserActivitySummary($_GET['user'], $conn);
     print '<div class="profile_content">';
-    print '<h1 class="profile_page_username">' . $_GET['user'] . '</h1>';
+    print '<h1 class="profile_page_username">' . htmlentities($_GET['user']) . '</h1>';
     if($num_comments === 0) {
       print "<h1 class=\"no_content\">There doesn't seem to be anything here...</h1>";
     }
@@ -47,7 +47,7 @@
         print '<a class="userpage_post_title" href="blog_post.php?id=' . $comment['blog_post_id'] . '">' . $comment['post_title'] . '</a>';
         $paragraphs = explode("\n", $comment['comment_text']);
         foreach($paragraphs as $p) {
-          print '<p>' . $p . '</p>';
+          print '<p>' . htmlentities($p) . '</p>';
         }
         print '</div>';
       }
@@ -55,8 +55,7 @@
     print '</div>';
   }
   else {
-    print '<h1 class="user_not_exist">';
-    print 'Sorry, this user does not exist.';
+    print '<h1 class="user_not_exist">Sorry, this user does not exist.</h1>';
   }
   ?>
 
