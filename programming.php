@@ -12,8 +12,14 @@
     $currentNav="programming";
     include('header.php');
     include('navbar.php');
+  ?>
+  <div class="rh_container">
+  <?php
     include('popular.php');
+  ?>
+  </div>
 
+  <?php
     $result = $dao->getBlogPostsForCategory('Programming');
 
     // regex to only grab first 3 sentences for preview.

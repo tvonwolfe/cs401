@@ -8,11 +8,12 @@ body {
 
 .headericon {
   float: left;
+  margin-top: 30px;
   margin-left: 40px;
   margin-right: -130px;
-  margin-top: 40px;
-  height: 100px;
-  width: 100px;
+  vertical-align: middle;
+  height: 80px;
+  width: 80px;
   padding: 0px;
 }
 
@@ -20,8 +21,8 @@ body {
   padding: 1px;
   background-image: linear-gradient(to right, #44b5fc, #1640a8);
   color: #eff1f2;
+  font-size: 30px;
   text-align: center;
-  font-size: 40px;
 }
 
 .nav_bar {
@@ -147,13 +148,9 @@ p {
 }
 
 .popular_post_sidebar {
-  float: right;
   border-top: 1px solid blue;
   background-color: #EEE;
-  margin-right: 75px;
-  margin-bottom: 20px;
   padding: 10px 30px;
-  width: 20%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -366,15 +363,12 @@ h1.unauthorized {
 
 .login_message {
   margin-left: auto;
-  margin-right: 75px;
   margin-bottom: 20px;
-  float: right;
   text-align: center;
   background-color: #99ffbb;
   border: solid 3px #bfddc1;
   color: #046d27;
   padding: 10px 27px;
-  width: 250px;
 }
 
 .no_comment {
@@ -397,6 +391,12 @@ h1.unauthorized {
   margin-left: 75px;
   margin-bottom: 40px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rh_container {
+  float: right;
+  margin-right: 75px;
+  width: 25%;
 }
 
 .comment_section textarea {

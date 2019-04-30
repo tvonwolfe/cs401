@@ -23,8 +23,15 @@
     $currentNav = $category_name;
 
     include('navbar.php');
-    include('popular.php');
+  ?>
 
+  <div class="rh_container">
+  <?php
+    include('popular.php');
+  ?>
+  </div>
+
+  <?php
     if(isset($_SESSION['cannot_comment'])) {
       print '<div class="no_comment">You must login to post comments.</div>';
       unset($_SESSION['cannot_comment']);

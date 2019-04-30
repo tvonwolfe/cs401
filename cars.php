@@ -12,8 +12,15 @@
     $currentNav="cars";
     include('header.php');
     include('navbar.php');
-    include('popular.php');
+  ?>
 
+  <div class="rh_container">
+  <?php
+    include('popular.php');
+  ?>
+  </div>
+
+  <?php
     $dao = new Dao();
     $result = $dao->getBlogPostsForCategory('Cars');
 

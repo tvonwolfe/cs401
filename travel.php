@@ -12,8 +12,15 @@
     $currentNav="travel";
     include('header.php');
     include('navbar.php');
-    include('popular.php');
+  ?>
 
+  <div class="rh_container">
+  <?php
+    include('popular.php');
+  ?>
+  </div>
+
+  <?php
     $result = $dao->getBlogPostsForCategory('Travel');
 
     // regex to only grab first 3 sentences for preview.
