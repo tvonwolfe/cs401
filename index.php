@@ -14,7 +14,6 @@
     include('navbar.php');
   ?>
 
-  <div class="rh_container">
   <?php
     if(isset($_SESSION['login_successful'])) {
       print '<div class="login_message">Hello, ' . $_SESSION['username'] . "!</div>\n";
@@ -22,7 +21,6 @@
     }
     include('popular.php');
   ?>
-  </div>
 
   <?php
     include('recent_posts.php');
