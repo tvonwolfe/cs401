@@ -47,7 +47,7 @@ class Dao {
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $ret |= self::BAD_EMAIL;
     }
-    if(strlen($user) > 20 || strlen($user) == 0) {
+    if(strlen($user) > 20 || strlen($user) == 0 || (strpos($user, "\"") !== false)) {
       $ret |= self::BAD_USER;
     }
     if($this->checkIfUserExists($user)) {
