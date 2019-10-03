@@ -83,7 +83,7 @@
 
       print '<h2 class="profile_summary">Profile Summary</h2>';
       print '<p class="profile_sidebar_data_header">Total Comments Posted:</p><p class="profile_sidebar_data">' . $num_comments . '</p>';
-      print '<p class="profile_sidebar_data_header">Member since:</p>';
+      print '<p class="profile_sidebar_data_header">Join date:</p>';
       $db_date = $dao->getAccountCreateDate($_GET['user'], $conn);
       print '<p class="profile_sidebar_data">' .  $dao->getAccountCreateDate($_GET['user'], $conn) . '</p>';
 
