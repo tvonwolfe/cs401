@@ -70,10 +70,10 @@ body {
 .blog_post {
   background-color: #444;
   padding: 30px;
-  width: 50%;
-  float: left;
-  margin-left: 75px;
-  margin-bottom: 40px;
+  width: 35%;
+  margin: 40px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .blog_post a.post_category_heading {
@@ -86,7 +86,7 @@ body {
   text-decoration: none;
   font-size: 30px;
   font-weight: bold;
-  line-height: 2.0;
+  line-height: 1.5;
   color: #999;
 }
 
@@ -167,6 +167,7 @@ div.login_panel {
 
 .textbox_container h3 {
   padding-left: 40px;
+  background-color: #555
 }
 
 .textbox {
@@ -324,6 +325,9 @@ h1.unauthorized {
   margin-left: 12%;
   height: 30px;
   font-size: 20px;
+  background-color: #555;
+  border: 0px;
+  box-sizing: border-box;
 }
 
 .post_content_area {
@@ -331,6 +335,8 @@ h1.unauthorized {
   margin-left: 12%;
   height: 300px;
   padding: 5px;
+  border: none;
+  background-color: #555;
 }
 
 .create_button_container {
@@ -364,11 +370,13 @@ h1.unauthorized {
 
 .comment_section {
   background-color: #444;
-  padding: 10px 30px;
-  width: 50%;
-  float: left;
-  margin-left: 75px;
-  margin-bottom: 40px;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 70px;
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .rh_container {
@@ -394,20 +402,15 @@ h1.unauthorized {
 
 .user_comments {
   padding: 10px 30px;
-  width: 50%;
-  float: left;
-  margin-left: 75px;
-  margin-bottom: 40px;
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a.usrnm {
   font-weight: bold;
   text-decoration: none;
-  color: #00186b;
-}
-
-a.usrnm:hover {
-  color: #1640a8;
+  color: #6699CC;
 }
 
 hr {

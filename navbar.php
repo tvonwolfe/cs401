@@ -3,16 +3,16 @@
   print " class=\"currentpage\"";?> href="index.php">Home</a>
 
   <a <?php if ($currentNav=="programming")
-  print " class=\"currentpage\"";?> href="programming.php">Programming</a>
+  print " class=\"currentpage\"";?> href="blog_category_posts.php?cat=programming">Programming</a>
 
   <a <?php if ($currentNav=="cars")
-  print " class=\"currentpage\"";?> href="cars.php">Cars</a>
+  print " class=\"currentpage\"";?> href="blog_category_posts.php?cat=cars">Cars</a>
 
   <a <?php if ($currentNav=="life")
-  print " class=\"currentpage\"";?> href="life.php">Life</a>
+  print " class=\"currentpage\"";?> href="blog_category_posts.php?cat=life">Life</a>
 
   <a <?php if ($currentNav=="travel")
-  print " class=\"currentpage\"";?> href="travel.php">Travel</a>
+  print " class=\"currentpage\"";?> href="blog_category_posts.php?cat=travel">Travel</a>
 
   <a <?php if ($currentNav=="about")
   print " class=\"currentpage\"";?> href="about.php">About</a>
