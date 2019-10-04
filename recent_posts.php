@@ -14,6 +14,7 @@ foreach ($result as $frontPagePost) {
   $post_id = $frontPagePost["blog_post_id"];
   $content = $frontPagePost["content"];
   $cat_id = $frontPagePost["category_id"];
+  $timestamp = $frontPagePost["blog_post_timestamp"];
 
   print '<div class="blog_post">
     <div><a class="post_category_heading" href=';
@@ -34,6 +35,11 @@ foreach ($result as $frontPagePost) {
   }
 
   print '</a></div>';
+  $datetime_str = explode(" ", $timestamp);
+  $datetime = new DateTime($datetime_str[0]);
+  $datetime->setTimezone(new DateTimeZone('-0700'));
+
+  print '<p class="timestamp">' . date_format($datetime, 'm/d/Y') . '</p>';
   print("\n");
   print '<a class="post_title" href="blog_post.php?id=' . $post_id . '"' . '>';
   print $title . '</a>';

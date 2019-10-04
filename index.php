@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,7 +20,6 @@
       print '<div class="login_message">Hello, ' . $_SESSION['username'] . "!</div>\n";
       unset($_SESSION['login_successful']);
     }
-    include('popular.php');
   ?>
   </div>
 
